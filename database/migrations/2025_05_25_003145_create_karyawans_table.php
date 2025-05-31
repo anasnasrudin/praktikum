@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama',100);
             $table->date('tanggal_lahir');
             $table->enum('jenis_kelamin',['L','P']);
-            $table->integer('id_jabatan');
+            $table->foreign('id_jabatan')->references('id_jabatan')->on('jabatans');
             $table->timestamps();
         });
     }

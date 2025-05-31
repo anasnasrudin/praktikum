@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('gajis', function (Blueprint $table) {
             $table->increments('id_gaji');
-            $table->integer('id_karyawan');
+            $table->foreign('id_karyawan')->references('id_karyawan')->on('karyawans');
             $table->integer('bulan');
             $table->year('tahun');
             $table->integer('jumlah_absensi');
